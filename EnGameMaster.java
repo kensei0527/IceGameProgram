@@ -20,10 +20,10 @@ public class EnGameMaster extends Canvas implements KeyListener {
     private int groCheckCounter = 10;   //海に落ちた判定を10回に一回行う
     private int noDieCount = 200;   //最初の無敵時間
     private int zWidth = imgW*(6/7)*(7/120);
-    private int jumpCount = 0;
-    private int score = 0;
-    private int scoreCounter= 0;
-    private boolean parentsFlag = false;
+    private int jumpCount = 0;      //ジャンプ時間の変数
+    private int score = 0;      //スコアの変数
+    private int scoreCounter= 0;        
+    private boolean parentsFlag = false;       //子ぐまと親の当たり判定のフラグ
     private int childScoreCounter = 0;
     private int backScreen;
     Font customFont = new Font("Arial", Font.BOLD, 36); // フォント、スタイル、サイズ
@@ -58,7 +58,7 @@ public class EnGameMaster extends Canvas implements KeyListener {
         backScreen = imgH;
 
         hokkyokuBear = new HokkyokuBear(imgW, imgH);
-        for(int i = 0;i<r1Field.length;i++){
+        for(int i = 0;i<r1Field.length;i++){        //フィールドは一列ずつ宣言
             r1Field[i] = new IceField(imgW, imgH, (imgW/10)*(i+3), (imgH/10)*1);
         }
         for(int i = 0;i<r2Field.length;i++){
